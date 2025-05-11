@@ -1,0 +1,349 @@
+.left-navbar-item-pressed {
+    pointer-events: none;
+}
+
+.content-section {
+    display: flex;
+    margin-top: 110px;
+    height: fit-content;
+    width: calc(95% - 190px);
+    margin-left: calc(5% + 190px);
+}
+
+.content-section .items-holder {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 20px;
+    margin-left: 15%;
+    width: 70%;
+    min-height: 500px;
+    padding-bottom: 50px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.03);
+}
+
+.items-holder .header {
+    margin-top: 10px;
+    color: rgb(51, 51, 51);
+    text-align: center;
+}
+
+.items-holder .buttons-holder {
+    display: flex;
+    width: 70%;
+    margin-left: calc(15% - 15px);
+    padding: 15px;
+    margin-top: 20px;
+    justify-content: center;
+    background-color: rgb(247, 247, 247);
+    gap: 15%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.05);
+}
+
+.items-holder .buttons-holder input[type=radio] {
+    display: none;
+}
+
+.items-holder .buttons-holder label {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    padding: 12px 0;
+    cursor: pointer;
+    background-color: #e7e7e7;
+    color: rgb(19, 19, 19);;
+    border-radius: 11px;
+    transition: 0.2s, 0.2s;
+}
+
+.items-holder .buttons-holder input[type=radio]:hover + label {
+    background-color: #dadada;
+    transition: 0.25s, 0.25s;
+}
+
+.items-holder .buttons-holder input[type=radio]:checked + label {
+    background-color: #000000;
+    color: white;
+    transition: 0.2s, 0.2s;
+}
+
+.items-holder .buttons-holder input[type=radio]:checked:hover + label {
+    background-color: #000000;
+}
+
+.items-holder .announcement-section {
+    width: 70%;
+    margin-top: 50px;
+    margin-left: calc(15% - 15px);
+    background-color: rgb(247, 247, 247);
+    box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.items-holder p {
+    font-size: x-large;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.items-holder .announcement-section .title {
+    width: 60%;
+    margin-left: 15px;
+    margin-top: 4px;
+    height: 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(117, 117, 117);
+    padding-top: 2px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    font-size: large;
+}
+
+.items-holder .text {
+    width: 60%;
+    margin-left: 15px;
+    margin-top: 4px;
+    border-radius: 5px;
+    border: 2px solid rgb(117, 117, 117);
+    padding-top: 2px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    font-size: large;
+    resize: none;
+}
+
+.items-holder .finish {
+    display: flex;
+    height: 42px;
+    width: 120px;
+    margin-left: 15px;
+    margin-top: 10px;
+    border-radius: 11px;
+    font-size: large;
+    border: 0;
+    appearance: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #426dfc;
+    cursor: pointer;
+    padding-bottom: 2px;
+    transition: 0.25s, 0.25s;
+}
+
+.items-holder .finish:hover {
+    background: #6286fd;
+    transition: 0.25s, 0.25s;
+}
+
+.items-holder .tasks-section {
+    width: 70%;
+    margin-top: 50px;
+    margin-left: calc(15% - 15px);
+    background-color: rgb(247, 247, 247);
+    box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.items-holder .tasks-section .work-name {
+    width: 60%;
+    margin-left: 15px;
+    margin-top: 4px;
+    height: 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(117, 117, 117);
+    padding-top: 2px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    font-size: large;
+}
+
+.items-holder .tasks-section table {
+    table-layout: fixed;
+    width: 94%;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    margin-left: 15px;
+    border: 1px solid rgb(117, 117, 117);
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.items-holder .tasks-section table tr {
+    border: 1px solid rgb(117, 117, 117);
+    border-collapse: collapse;
+}
+
+.items-holder .tasks-section table td {
+    border: 1px solid rgb(117, 117, 117);
+    border-collapse: collapse;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.items-holder .tasks-section table th{
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: 1px solid rgb(117, 117, 117);;
+    border-collapse: collapse;
+    background-color: rgb(221, 236, 248);
+}
+
+.items-holder .tasks-section table button {
+    background-color: #ff4b4b;
+    font-size: 17px;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 7%;
+    padding-left: 7%;
+    border-radius: 9px;
+    color: rgb(255, 255, 255);
+    transition: 0.25s, 0.25s;
+    border: none;
+}
+
+.items-holder .tasks-section table button:hover {
+    background-color: #fd7d7d;
+    transition: 0.25s, 0.25s;
+}
+
+.items-holder .tasks-section input[type=radio] {
+    display: none;
+}
+
+.items-holder .tasks-section label {
+    display: inline-block;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 30%;
+    text-align: center;
+    padding: 12px 0;
+    cursor: pointer;
+    background-color: #ebebeb;
+    border: 1px solid #cacaca;
+    border-radius: 7px;
+    transition: 0.25s, 0.25s;
+}
+
+.items-holder .tasks-section input[type=radio]:hover + label {
+    color: #858585;
+    transition: 0.25s, 0.25s;
+}
+
+.items-holder .tasks-section input[type=radio]:checked + label {
+    background-color: #cacaca;
+    transition: 0.25s, 0.25s;
+}
+
+.items-holder .tasks-section input[type=radio]:checked:hover + label {
+    color: #000000;
+}
+
+.items-holder .tasks-section .filter-holder {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.items-holder .tasks-section .filter-holder select {
+    color: rgb(51, 51, 51);
+    background-color: rgb(248, 248, 248);
+    border-radius: 10px;
+    width: 100%;
+    height: 35px;
+    margin-top: 10px;
+    border-color: rgb(215, 215, 215);
+    font-size: larger;
+    margin-bottom: 15px;
+}
+
+.items-holder .tasks-section .tasks-choose {
+    margin-top: 10px;
+}
+
+.items-holder .tasks-section .tasks-choose table th {
+    background-color: rgb(206, 206, 206);
+}
+
+.items-holder .tasks-section .tasks-choose table th:nth-child(1) {
+    width: 15%;
+}
+
+.items-holder .tasks-section .tasks-choose table th:nth-child(2) {
+    width: 25%;
+}
+
+.items-holder .tasks-section .tasks-choose table th:nth-child(3) {
+    width: 25%;
+}
+
+.items-holder .tasks-section .tasks-choose table th:nth-child(4) {
+    width: 35%;
+}
+
+.items-holder .tasks-section .tasks-choose table .add {
+    background-color: rgb(126, 202, 126);
+}
+
+.items-holder .tasks-section .tasks-choose table .add:hover {
+    background-color: rgb(152, 206, 152);
+}
+
+.items-holder .tasks-section .tasks-choose table .statement {
+    background-color: #426dfc;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.items-holder .tasks-section .tasks-choose table .statement:hover {
+    background-color: #678aff;
+}
+
+.items-holder .tasks-section .create input {
+    width: 60%;
+    margin-left: 15px;
+    margin-top: 4px;
+    height: 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(117, 117, 117);
+    padding-top: 2px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    font-size: large;
+}
+
+.items-holder .tasks-section .create .create {
+    display: flex;
+    height: 35px;
+    width: 110px;
+    margin-left: 15px;
+    border-radius: 11px;
+    font-size: large;
+    border: 0;
+    appearance: none;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: 0.25s, 0.25s;
+}
+
+.items-holder .tasks-section .create .create:hover {
+    background-color: #cfcfcf;
+    transition: 0.25s, 0.25s;
+}
+
+

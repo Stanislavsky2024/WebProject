@@ -1,0 +1,120 @@
+.content-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    height: max-content;
+    margin-left: calc(50% - 210px);
+    width: 420px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05)
+}
+
+.content-section .website-logo {
+    display: flex;
+    margin-top: 15px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.content-section .website-logo .logo {
+    height: 50px;
+}
+
+.content-section .website-logo .text {
+    color: rgb(70, 70, 70);
+    font-size: 30px;
+    align-self: center;
+}
+
+.content-section .title {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.content-section .form-holder {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+.content-section .form-holder p {
+    margin-top: 10px;
+}
+
+.content-section .check-holder {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.content-section .form-holder a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33px;
+    width: calc(100% - 4px);
+    margin-top: 10px;
+    align-self: center;
+    background: #ffffff;
+    appearance: none;
+    border: 2px solid rgb(24, 24, 24);
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: large;
+    color: rgb(56, 56, 56);
+    text-decoration: none;
+    transition: 0.3s, 0.3s;
+}
+
+.content-section .form-holder a:hover {
+    background: rgb(56, 56, 56);
+    transition: 0.3s, 0.3s;
+    color: rgb(255, 255, 255);
+}
+
+.form-control {
+    width: calc(100% - 4px);
+    border-radius: 5px;
+    border: 2px solid rgb(129, 129, 129);
+    padding-top: 2px;
+    padding-bottom: 1px;
+    font-size: large;
+}
+
+.submit {
+    height: 35px;
+    width: 100%;
+    align-self: flex-end;
+    font-size: large;
+    margin-top: 5px;
+    background: #426dfc;
+    color: white;
+    appearance: none;
+    border: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.3s, 0.3s;
+}
+
+.submit:hover {
+    background: #6085fd;
+    transition: 0.3s, 0.3s;
+}
+
+.checkBox {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgb(117, 117, 117);
+}
+
+label {
+    font-size: larger;
+    color: rgb(51, 51, 51);
+}

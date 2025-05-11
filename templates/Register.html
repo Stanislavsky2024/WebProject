@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/Base/styles/Main.css">
+    <link rel="stylesheet" href="/static/Register/styles/content.css">
+    <title>{{title}}</title>
+</head>
+<body>
+    <div class="content-section">
+        <div class="website-logo">
+            <img class="logo" src="/static/cards/Logo.png" alt="">
+            <p class="text">Atom</p>
+        </div>
+        <h1 class="title">Создание учетной записи</h1>
+        <div class="form-holder">
+            <form action="" method="post">
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.surname.label }}<br>
+                    {{ form.surname(class="form-control") }}<br>
+                </p>
+                <p>
+                    {{ form.name.label }}<br>
+                    {{ form.name(class="form-control") }}<br>
+                </p>
+                <p>
+                    {{ form.email.label }}<br>
+                    {{ form.email(class="form-control", type='email') }}<br>
+                </p>
+                <p>
+                    {{ form.password.label }}<br>
+                    {{ form.password(class="form-control", type='password') }}<br>
+                    {% for error in form.password.errors %}
+                        <p style="color: red;" role="alert">
+                            {{ error }}
+                        </p>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.password_again.label }}<br>
+                    {{ form.password_again(class="form-control", type='password') }}<br>
+                </p>
+                <p style="font-size: large; color: red;">{{message}}</p>
+                <p class="check-holder">{{ form.is_teacher(class="checkBox") }} {{ form.is_teacher.label }}</p>
+                <p>{{ form.submit(type="submit", class="submit") }}</p>
+            </form>
+            <a href="/login">Войти в учетную запись</a>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,46 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/VariantsSolving/styles/content.css">
+<script src="/static/VariantsSolving/scripts/main.js" defer></script>
+<div class="variant"><h1>{{name}}</h1></div>
+    <div class="content-section" id="{{var}}">
+        <div class="list-section">
+            <button id="btn1">ʌ</button>
+            <button id="btn2" class="pressed">1</button>
+            <button id="btn3">2</button>
+            <button id="btn4">3</button>
+            <button id="btn5">4</button>
+            {% if length|int - 4 == 2 %} 
+                <button id="btn6">5</button>
+            {% else %}
+                <button id="btn6">...</button>
+            {% endif %}
+            <button id="btn7">{{length}}</button>
+            <button id="btn8">v</button>
+        </div>
+        <div class="task-section">
+            <div class="info-section">
+                <h1 id="task">Задание 1</h1>
+            </div>
+            <p id="text1" style="white-space: pre-wrap">{{first['text1']}}</p>
+            {% if first['image'] %}
+                <img id="img" src="{{first['image']}}" alt=" ">
+                <p id="text2" style="white-space: pre-wrap">{{first['text2']}}</p>
+            {% else %}
+                <img id="img" style="display: none;" src="{{first['image']}}" alt=" ">
+                <p id="text2" style="display: none;">{{first['text2']}}</p>
+            {% endif %}
+            <div class="interface-section">
+                <input id="answer" type="text" name="answer" placeholder="Введите ответ" autocomplete="off">
+                <button class="submit">Сохранить</button>
+                <p id="saved" class="saved" style="display: none; color: green;">Ответ сохранен!</p>
+                {% if var[-1] == 't' %}
+                    <button id="finish" class="finish" style="display: none; color: rgb(19, 19, 19);">Завершить вариант</button>
+                {% else %}
+                    <button id="finish" class="finish" style="display: none; color: rgb(19, 19, 19);">Завершить работу</button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

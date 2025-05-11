@@ -1,0 +1,73 @@
+{% extends "Base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/GroupPage/static/content.css">
+<script src="/static/GroupPage/scripts/main.js" defer></script>
+<div class="content-section" id="{{group_id}}-section">
+    <div class="main-section">
+        <div class="announcements-section">
+            {% if announcement %}
+                <h1>{{announcement.title}}</h1>
+                <p>{{announcement.text}}</p>
+            {% endif %}
+        </div>
+        <h1>Работы</h1>
+        <div class="tasks-section">
+            <table class="group-tasks">
+                <thead>
+                    <tr>
+                        <th>Номер</th>
+                        <th>Название</th>
+                        <th>Кол-во заданий</th>
+                        <th>Ваш результат</th>
+                        <th>Действие</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for work in works %}
+                        <tr id="{{work.id}}">
+                            <td>{{loop.index}}</td>
+                            <td>{{work.name}}</td>
+                            <td>{{work.tasks|length}}</td>
+                            <td>{{results[loop.index - 1]}}</td>
+                            {% if current_user.id == creator['id'] %}
+                                <td><a class="remove">Удалить</a></td>
+                            {% elif results[loop.index - 1] != '-' %}
+                                <td><a class="off">Выполнено</a></td>
+                            {% else %}
+                                <td><a class="solve" href="/groups/{{group_id}}/{{work.id}}/solving">Выполнить</a></td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% if current_user.id == creator['id'] %}
+            <p style="font-size: large; color: rgb(51, 51, 51); margin-left: 5%; margin-top: 20px;">Ссылка для вступления в группу: http://127.0.0.1:5000/groups/join/{{link}}</p>
+        {% endif %}
+    </div>
+    <div class="members-section">
+        <h1>Участники</h1>
+        <div class="members-holder">
+            <article>
+                <img src="{{creator['picture']}}" alt="">
+                <p style="color: rgb(38, 143, 212);">{{creator['name']}} {{creator['surname']}}</p>
+            </article>
+            {% for member in members %}
+                <article>
+                    <img src="{{member['picture']}}" alt="">
+                    <p>{{member['name']}} {{member['surname']}}</p>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+

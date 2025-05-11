@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/static/Base/styles/Main.css">
+    <link rel="stylesheet" href="/static/Base/styles/content.css">
+</head>
+<body>
+    <div class="head-navbar">
+        <a class="website-logo" href="/">
+            <img class="logo" src="/static/cards/Logo.png" alt="">
+            <p class="text">Atom</p>
+        </a>
+        {% if current_user.is_authenticated %}
+            <div class="user-items">
+                <img src="{{current_user.profile_pics}}" alt="">
+                <p>{{current_user.name}} {{current_user.surname}}</p>
+            </div>
+        {% else %}
+            <div class="forms-items">
+                <a href="/register">Регистрация</a>
+                <a href="/login">Войти</a>
+            </div>
+        {% endif %}
+    </div>
+    <div class="left-navbar">
+        {% if active == '1' %}
+            <a style="margin-top: 25px;" class="left-navbar-item-pressed" href="/">
+                <img class="icons" src="/static/cards/homeIcon.png" alt="">
+                <p class="text">Главная страница</p>
+            </a>
+        {% else %}
+            <a style="margin-top: 25px;" class="left-navbar-item" href="/">
+                <img class="icons" src="/static/cards/homeIcon.png" alt="">
+                <p class="text">Главная страница</p>
+            </a>
+        {% endif %}
+        {% if active == '2' %}
+            <a class="left-navbar-item-pressed" href="/catalog">
+                <img class="icons" src="/static/cards/catalogIcon.png" alt="">
+                <p class="text">Каталог заданий</p>
+            </a>
+        {% else %}
+            <a class="left-navbar-item" href="/catalog">
+                <img class="icons" src="/static/cards/catalogIcon.png" alt="">
+                <p class="text">Каталог заданий</p>
+            </a>
+        {% endif %}
+        {% if current_user.is_authenticated %}
+            {% if active == '3' %}
+                <a class="left-navbar-item-pressed" href="/variants/choose">
+                    <img class="icons" src="/static/cards/variantsIcon.png" alt="">
+                    <p class="text">Варианты</p>
+                </a>
+            {% else %}
+                <a class="left-navbar-item" href="/variants/choose">
+                    <img class="icons" src="/static/cards/variantsIcon.png" alt="">
+                    <p class="text">Варианты</p>
+                </a>
+            {% endif %}
+        {% endif %}
+        {% if current_user.is_authenticated %}
+            {% if active == '5' %}
+                <a class="left-navbar-item-pressed" href="/groups">
+                    <img class="icons" src="/static/cards/groupIcon.png" alt="">
+                    <p class="text">Группы</p>
+                </a>
+            {% else %}
+                <a class="left-navbar-item" href="/groups">
+                    <img class="icons" src="/static/cards/groupIcon.png" alt="">
+                    <p class="text">Группы</p>
+                </a>
+            {% endif %}
+            {% if editor == 'true' %}
+                {% if active == 'edit' and current_user.id == creator['id'] %}
+                    <a class="left-navbar-item-pressed" href="{{url_for(request.endpoint, **request.view_args)}}/editor">
+                        <img class="icons" src="/static/cards/editorIcon.png" alt="">
+                        <p class="text">Редактор группы</p>
+                    </a>
+                {% elif current_user.id == creator['id'] %}
+                    <a class="left-navbar-item" href="{{url_for(request.endpoint, **request.view_args)}}/editor">
+                        <img class="icons" src="/static/cards/editorIcon.png" alt="">
+                        <p class="text">Редактор группы</p>
+                    </a>
+                {% endif %}
+            {% endif %}
+            {% if active == '4' %}
+                <a class="left-navbar-item-pressed" href="/profile">
+                    <img class="icons" src="/static/cards/profileIcon.png" alt="">
+                    <p class="text">Профиль</p>
+                </a>
+            {% else %}
+                <a class="left-navbar-item" href="/profile">
+                    <img class="icons" src="/static/cards/profileIcon.png" alt="">
+                    <p class="text">Профиль</p>
+                </a>
+            {% endif %}
+            <a class="left-navbar-item-logout" href="/logout">
+                <img class="icons" src="/static/cards/logoutIcon.png" alt="">
+                <p class="text">Выйти</p>
+            </a>
+        {% endif %}
+    </div>
+    {% block content %}{% endblock %}
+</body>
+</html>

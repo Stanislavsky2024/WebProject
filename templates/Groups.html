@@ -1,0 +1,89 @@
+{% extends "Base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/Groups/styles/content.css">
+<link rel="stylesheet" href="/static/Groups/styles/dialogs.css">
+<script type="module" src="/static/Groups/scripts/main.js" defer></script>
+<div class="content-section">
+    <div class="items-holder">
+        {% if current_user.is_teacher == 1 %}
+            <h1 class="header1">Ваши созданные группы</h1>
+            <div class="group-holder">
+                {% for group in groups %}
+                    <article class="group">
+                        <div class="info-holder">
+                            <h1>{{group.name}}</h1>
+                            <p>{{group.description}}</p>
+                        </div>
+                        <div class="button-holder">
+                            <a class="open" href="/groups/{{group.id}}">Открыть</a>
+                            <button class="more" id="more" name="{{group.id}}">...</button>
+                        </div>
+                        <div class="extras1" id="{{group.id}}" style="display: none;">
+                            <button class="edit">Редактировать</button>
+                            <button class="delete">Удалить</button>
+                        </div>
+                    </article>
+                {% endfor %}
+                <article class="create-button">➕ Добавить группу</article>
+            </div>
+            <dialog class="createGroup">
+                <form action="" method="post" id="createGroupForm" autocomplete="off">
+                    <h1>Создание группы</h1>
+                    <p>Название:</p>
+                    {{ formCreate.name(class='inputTextCreate', placeholder="Введите название") }}
+                    <p>Описание:</p>
+                    {{ formCreate.description(class='inputTextCreate', placeholder="Введите описание") }}
+                    <p style="color: red; display: none;" id="formCreateError"></p>
+                    <div>
+                        <input type="button" class="submitDialogCreate", value="Создать">
+                        <input type="button" class="closeDialogCreate", value="Закрыть">
+                        {{ formCreate.submit(type="submit", style='display: none', id="formCreateSubmit") }}
+                    </div>
+                </form>
+            </dialog>
+            <dialog class="editGroup">
+                <form action="" method="post" id="editGroupForm" autocomplete="off">
+                    <h1>Редактирование группы</h1>
+                    <p>Название:</p>
+                    {{ formEdit.name(class='inputTextEdit', placeholder="Введите название") }}
+                    <p>Описание:</p>
+                    {{ formEdit.description(class='inputTextEdit', placeholder="Введите описание") }}
+                    <p style="color: red; display: none;" id="formEditError"></p>
+                    <div>
+                        <input type="button" class="submitDialogEdit", value="Подтвердить">
+                        <input type="button" class="closeDialogEdit", value="Закрыть">
+                        {{ formEdit.submit(type="submit", style='display: none', id="formEditSubmit") }}
+                    </div>
+                </form>
+            </dialog>
+            <h1 class="header2" style="text-align: center;color: rgb(45, 45, 45);margin-top: 40px;">Группы, в которых состоите</h1>
+        {% else %}
+            <h1 class="header2" style="text-align: center;color: rgb(45, 45, 45)">Группы, в которых состоите</h1>
+        {% endif %}
+        <div class="group-holder">
+            {% for group in groups_participant %}
+                {% if group %}
+                    <article class="group">
+                        <div class="info-holder">
+                            <h1>{{group.name}}</h1>
+                            <p>{{group.description}}</p>
+                        </div>
+                        <div class="button-holder">
+                            <a class="open" href="/groups/{{group.id}}">Открыть</a>
+                            <button class="more" id="more" name="{{group.id}}">...</button>
+                        </div>
+                        <div class="extras2" id="{{group.id}}" style="display: none;">
+                            <button class="leave">Покинуть группу</button>
+                        </div>
+                    </article>
+                {% else %}
+                    <article class="group">
+                        <h1 class="warning">Вы не состоите ни в одной группе</h1>
+                    </article>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

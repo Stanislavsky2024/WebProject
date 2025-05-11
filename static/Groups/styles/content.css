@@ -1,0 +1,243 @@
+.content-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 110px;
+    height: fit-content;
+    width: 100%;
+}
+
+.content-section .items-holder {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 45%;
+    margin-left: calc(5% + 190px);
+    align-self: center;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.03);
+    border-radius: 20px;
+    background: white;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.content-section .items-holder .header1 {
+    text-align: center;
+    color: rgb(45, 45, 45);
+}
+
+.content-section .items-holder .group-holder {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(160, 160, 160);
+    border-radius: 20px;
+    margin-top: 20px;
+    height: max-content;
+    padding-top: 10px;
+    width: fit-content;
+    max-width: 800px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-section .items-holder .group-holder article {
+    display: flex;
+    flex-direction: column;
+    height: 160px;
+    width: 380px;
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
+}
+
+.content-section .items-holder .group-holder h1 {
+    margin-left: 10px;
+    margin-top: 5px;
+    color: rgb(51, 51, 51);
+}
+
+.content-section .items-holder .group-holder p {
+    display: flex;
+    font-size: large;
+    color: rgb(51, 51, 51);
+    margin-left: 10px;
+}
+
+.content-section .items-holder .group-holder .warning {
+    margin: 0;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.content-section .items-holder .group-holder .info-holder {
+    display: flex;
+    flex-direction: column;
+    height: max-content
+}
+
+.content-section .items-holder .group-holder .button-holder {
+    display: flex;
+    height: 100%;
+}
+
+.content-section .items-holder .group-holder .more {
+    display: flex;
+    height: 35px;
+    width: 40px;
+    margin-bottom: 10px;
+    margin-left: calc(100% - 160px);
+    justify-content: center;
+    align-self: flex-end;
+    align-items: center;
+    font-size: large;
+    background: #eaecec;
+    color: rgb(19, 19, 19);
+    appearance: none;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.25s, 0.25s;
+}
+
+.content-section .items-holder .group-holder .open {
+    display: flex;
+    height: 35px;
+    width: 100px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    justify-content: center;
+    align-self: flex-end;
+    align-items: center;
+    font-size: large;
+    background: #eaecec;
+    color: rgb(19, 19, 19);
+    text-decoration: none;
+    appearance: none;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.25s, 0.25s;
+}
+
+.content-section .items-holder .group-holder .more:hover {
+    background: #d8dada;
+    transition: 0.25s, 0.25s;
+}
+
+.content-section .items-holder .group-holder .open:hover {
+    background: #d8dada;
+    transition: 0.25s, 0.25s;
+}
+
+.content-section .items-holder .group-holder .create-button {
+    display: flex;
+    height: 160px;
+    width: 380px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: x-large;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(160, 160, 160);
+    color: rgb(231, 231, 231);
+    border-radius: 20px;
+    appearance: none;
+    cursor: pointer;
+    transition: 0.25s, 0.25s;
+}
+
+.content-section .items-holder .group-holder .create-button:hover {
+    background-color: rgb(170, 170, 170);
+    transition: 0.25s, 0.25s;
+}
+
+.extras1 {
+    position: absolute;
+    margin-left: 210px;
+    margin-top: 20px;
+    z-index: 9;
+    border: 0;
+    border-radius: 14px;
+    align-self: center;
+    justify-self: center;
+    height: max-content;
+    width: 150px;
+    background-color: rgb(230, 230, 230);
+}
+
+.extras2 {
+    position: absolute;
+    margin-left: 210px;
+    margin-top: 60px;
+    z-index: 9;
+    border: 0;
+    border-radius: 14px;
+    align-self: center;
+    justify-self: center;
+    height: max-content;
+    width: 150px;
+    background-color: rgb(230, 230, 230);
+}
+
+.extras1 .edit {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 90%;
+    margin-left: 5%;
+    font-size: medium;
+    background: #d8d8d8;
+    color: rgb(19, 19, 19);
+    appearance: none;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.25s, 0.25s;
+}
+
+.extras1 .delete {
+    margin-bottom: 10px;
+    height: 30px;
+    width: 90%;
+    margin-left: 5%;
+    font-size: medium;
+    background: #fccdcd;
+    color: rgb(235, 61, 61);
+    appearance: none;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.25s, 0.25s;
+}
+
+.extras2 .leave {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    height: 30px;
+    width: 90%;
+    margin-left: 5%;
+    font-size: medium;
+    background: #fccdcd;
+    color: rgb(235, 61, 61);
+    appearance: none;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.25s, 0.25s;
+}
+
+.extras1 .edit:hover {
+    background: #cecece;
+    transition: 0.25s, 0.25s;
+}
+
+.extras1 .delete:hover, .extras2 .leave:hover {
+    background: #f8b9b9;
+    transition: 0.25s, 0.25s;
+}

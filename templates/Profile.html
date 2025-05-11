@@ -1,0 +1,52 @@
+{% extends "Base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/Profile/styles/content.css">
+<script src="/static/Profile/scripts/main.js" defer></script>
+<div class="content-section">
+    <div class="user-section">
+        <h1 class="header">Профиль пользователя</h1>
+        <div class="user-holder">
+            <div class="avatar-section">
+                <div class="image-section">
+                    <img id="avatar-image" src="{{current_user.profile_pics}}" alt="">
+                </div>
+                <input type="file" accept="image/*" id="avatar-upload" style="display: none;">
+                <p onclick="document.getElementById('avatar-upload').click()" id="photo-loader">Изменить</p>
+            </div>
+            <div class="text-section">
+                <h1>{{current_user.name}} {{current_user.surname}}</h1>
+                {% if current_user.is_teacher %}
+                    <h2 style="display: flex;">Статус: <p>Учитель</p></h2>
+                {% else %}
+                    <h2>Статус: Ученик</h2>
+                {% endif %}
+                <div class="groups-info">
+                    <h2 style="display: flex;">Состоит в: <p>{{groups_amount}} {{groups}}</p></h2>
+                </div>
+                <div class="time-info">
+                    <h2>Зарегистрирован:</h2>
+                    {% if date_amount == 0 %}
+                        <p>Недавно</p>
+                    {% else %}
+                        <p>{{date_amount}} {{date}}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="statistics-section">
+        <h1 class="header">Статистика</h1>
+        <div class="statistics-holder">
+            <div class="stat1">
+                <h2>Решено заданий</h2>
+                <p>{{tasks_amount}} {{tasks}}</p>
+            </div>
+            <div class="stat2">
+                <h2>Решено вариантов</h2>
+                <p>{{variants_amount}} {{variants}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

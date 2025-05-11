@@ -1,0 +1,123 @@
+.content-section {
+    display: flex;
+    width: 60%;
+    margin-left: calc(20% + 130px);
+    flex-direction: column;
+    height: max-content;
+    margin-top: 110px;
+}
+
+.content-section .options-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.content-section .options-section button {
+    display: flex;
+    height: 45px;
+    width: 130px;
+    border-radius: 9px;
+    font-size: large;
+    border: 0;
+    appearance: none;
+    justify-content: center;
+    color: rgb(19, 19, 19);
+    background: #e7e7e7;
+    cursor: pointer;
+    align-items: center;
+    padding-bottom: 2px;
+    transition: 0.25s, 0.25s;
+}
+
+.content-section .options-section button:hover {
+    background: #d7dada;
+    transition: 0.25s, 0.25s;
+}
+
+.content-section .options-section .pressed {
+    background: #303030;
+    color: rgb(247, 247, 247);
+}
+
+.content-section .options-section .pressed:hover {
+    background: #303030;
+}
+
+.content-section .variant-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    flex-direction: column;
+    margin-top: 20px;
+    height: 280px;
+    width: 100%;
+}
+
+.content-section .variant-section .generator-section {
+    display: flex;
+    background-color: rgb(252, 252, 252);
+    flex-direction: column;
+    width: 650px;
+    height: 100%;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.03);
+    border-radius: 20px;
+}
+
+.content-section .variant-section h1 {
+    display: flex;
+    padding-top: 5px;
+    justify-content: center;
+    height: min-content;
+    color: rgb(19, 19, 19);
+}
+
+.content-section .variant-section p {
+    color: rgb(68, 68, 68);
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size: larger;
+    padding-top: 10px;
+}
+
+.content-section .variant-section .button-class {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: flex-end;
+}
+
+.content-section .variant-section button {
+    height: 45px;
+    width: 140px;
+    font-size: larger;
+    margin-bottom: 20px;
+    background: #eaecec;
+    color: rgb(19, 19, 19);
+    appearance: none;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.25s, 0.25s;
+}
+
+.content-section .variant-section button:hover {
+    background: #d7dada;
+    transition: 0.25s, 0.25s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

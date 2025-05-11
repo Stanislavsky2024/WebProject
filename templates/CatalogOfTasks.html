@@ -1,0 +1,78 @@
+{% extends "Base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/CatalogOfTasks/styles/content.css">
+<script type="module" src="/static/CatalogOfTasks/scripts/main.js" defer></script>
+<div class="content-section">
+    <div class="filter-section">
+        <h1>Фильтры заданий</h1>
+        <div class="filter-holder">
+            <div class="filter-1">
+                <p>Выбор задания</p>
+                <select class="dropdown1" name="task-choosing" id="dropdown1">
+                    <div class="options">
+                        {% for i in range(1, 13) %}
+                            <option value="">Задание {{i}}</option>
+                        {% endfor %}
+                    </div>
+                </select>
+            </div>
+            <div class="filter-2">
+                <p>Выбор сложности</p>
+                <select class="dropdown2" name="difficulty-choosing" id="dropdown2">
+                    <option value="">Все сложности</option>
+                    <option value="">Простой</option>
+                    <option value="">Средний</option>
+                    <option value="">Сложный</option>
+                </select>
+            </div>
+            <div class="filter-3">
+                <p>Выбор типа</p>
+                <select class="dropdown3" name="type-choosing" id="dropdown3">
+                    <option value="">Все типы</option>
+                    <option value="">Кодировка - 8 бит</option>
+                    <option value="">Кодировка - 16 бит</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="tasks-section">
+        {% for task in tasks %}
+            <article class="task1" id="{{task.id}}">
+                <div class="info-section">
+                    <div class="header-section">
+                        <h1>Задание 1.{{loop.index}}</h1>
+                        {% if task.id|string in solved %}
+                            <img id="{{task.id}}_isSolved" src="/static/cards/greenmark.png" alt="">
+                        {% else %}
+                            <img id="{{task.id}}_isSolved" style="display: none;" src="/static/cards/greenmark.png" alt="">
+                        {% endif %}
+                    </div>
+                    <div class="stats-section">
+                        <div class="type">{{task.type}}</div>
+                        <div class="difficulty">{{task.difficulty}}</div>
+                    </div>
+                </div>
+                <p style="white-space: pre-wrap">{{task.text1}}</p>
+                {% if task.image %}
+                    <img name="image" src="{{task.image}}" alt=" ">
+                    <p name="text2" style="white-space: pre-wrap">{{task.text2}}</p>
+                {% endif %}
+                <div class="interface-section">
+                    <div class="input-answer">
+                        <input type="text" name="answer" placeholder="Введите ответ" autocomplete="off">
+                        <button class="submit">Проверить</button>
+                    </div>
+                    <button class="solution" name="false">Решение</button>
+                </div>
+                <p>Источник: <a style="padding-left: 10px;" target="_blank" href="https://oge.fipi.ru/bank/index.php?proj=74676951F093A0754D74F2D6E7955F06">Сайт ФИПИ</a></p>
+                <div class="solution-section" style="display: none;">
+                    <h1 class="solution-h1"></h1>
+                    <p style="white-space: pre-wrap"></p>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+</div>
+<div style="margin-top: 50px;"></div>
+{% endblock %}

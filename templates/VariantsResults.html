@@ -1,0 +1,122 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/VariantsResults/styles/content.css">
+<div class="content-section">
+    {% if mode == 'variant' %}
+        <h1>Результаты решения варианта</h1>
+    {% else %}
+        <h1>Результаты решения работы</h1>
+    {% endif %}
+    <div class="results-section">
+     <div class="table-section">
+        <table>
+             <thead>
+                 <tr>
+                     <th>Номер</th>
+                     <th>Баллы</th>
+                     <th>Ваш ответ</th>
+                     <th>Правильный ответ</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 {% for res in results %}
+                     {% if res['is_correct'] == '1' %}
+                        {% if mode == 'variant' %}
+                            <tr style="background-color: #6bda6b;">
+                                <td>{{loop.index}}</td>
+                                <td>{{points[loop.index - 1]}}</td>
+                                <td>{{res['user_answer']}}</td>
+                                <td>{{res['correct_answer']}}</td>
+                            </tr>
+                        {% else %}
+                            <tr style="background-color: #6bda6b;">
+                                <td>{{loop.index}}</td>
+                                <td>1</td>
+                                <td>{{res['user_answer']}}</td>
+                                <td>{{res['correct_answer']}}</td>
+                            </tr>
+                        {% endif %}
+                     {% else %}
+                         <tr style="background-color: rgb(255, 125, 125);">
+                             <td>{{loop.index}}</td>
+                             <td>0</td>
+                             <td>{{res['user_answer']}}</td>
+                             <td>{{res['correct_answer']}}</td>
+                         </tr>
+                     {% endif %}
+                 {% endfor %}
+             </tbody>
+        </table>
+     </div>
+     <div class="info-section">
+         <article class="points">
+             <h1>Набрано баллов</h1>
+             <div class="class">
+                {% if mode == 'variant' %}
+                    {% if totalPoints|int > 78 %}
+                        <p class="res1" style="color: rgb(19, 187, 19);">{{totalPoints}}</p><p>/100</p>
+                    {% elif totalPoints|int > 43 %}
+                        <p class="res1" style="color: rgb(232, 235, 56);">{{totalPoints}}</p><p>/100</p>
+                    {% else %}
+                        <p class="res1" style="color: rgb(187, 19, 19);">{{totalPoints}}</p><p>/100</p>
+                    {% endif %}
+                {% else %}
+                    {% if totalPoints|int / points|int > 0.8 %}
+                        <p class="res1" style="color: rgb(19, 187, 19);">{{totalPoints}}</p><p>/{{points}}</p>
+                    {% elif totalPoints|int / points|int <= 0.3 %}
+                        <p class="res1" style="color: rgb(187, 19, 19);">{{totalPoints}}</p><p>/{{points}}</p>
+                    {% else %}
+                        <p class="res1" style="color: rgb(232, 235, 56);">{{totalPoints}}</p><p>/{{points}}</p>
+                    {% endif %}
+                {% endif %}
+             </div>
+         </article>
+         <article class="tasks">
+             <h1>Выполнено заданий</h1>
+             <div class="class">
+                {% if mode == 'variant' %}
+                    {% if totalAns|int > 9 %}
+                        <p class="res1" style="color: rgb(19, 187, 19);">{{totalAns}}</p><p>/12</p>
+                    {% elif totalAns|int > 6 %}
+                        <p class="res1" style="color: rgb(232, 235, 56);">{{totalAns}}</p><p>/12</p>
+                    {% else %}
+                        <p class="res1" style="color: rgb(187, 19, 19);">{{totalAns}}</p><p>/12</p>
+                    {% endif %}
+                {% else %}
+                    {% if totalAns|int / points|int > 0.8 %}
+                        <p class="res1" style="color: rgb(19, 187, 19);">{{totalAns}}</p><p>/{{points}}</p>
+                    {% elif totalAns|int / points|int <= 0.3 %}
+                        <p class="res1" style="color: rgb(187, 19, 19);">{{totalAns}}</p><p>/{{points}}</p>
+                    {% else %}
+                        <p class="res1" style="color: rgb(232, 235, 56);">{{totalAns}}</p><p>/{{points}}</p>
+                    {% endif %}
+                {% endif %}
+             </div>
+         </article>
+         <article class="correct">
+             <h1>Правильные ответы</h1>
+             <div class="class">
+                {% if mode == 'variant' %}
+                    {% if corrAns|int > 9 %}
+                        <p class="res2" style="color: rgb(19, 187, 19);">{{corrAns}}</p><p>/12</p>
+                    {% elif corrAns|int > 4 %}
+                        <p class="res2" style="color: rgb(232, 235, 56);">{{corrAns}}</p><p>/12</p>
+                    {% else %}
+                        <p class="res2" style="color: rgb(187, 19, 19);">{{corrAns}}</p><p>/12</p>
+                    {% endif %}
+                {% else %}
+                    {% if corrAns|int / points|int > 0.8 %}
+                        <p class="res1" style="color: rgb(19, 187, 19);">{{corrAns}}</p><p>/{{points}}</p>
+                    {% elif corrAns|int / points|int <= 0.3 %}
+                        <p class="res1" style="color: rgb(187, 19, 19);">{{corrAns}}</p><p>/{{points}}</p>
+                    {% else %}
+                        <p class="res1" style="color: rgb(232, 235, 56);">{{corrAns}}</p><p>/{{points}}</p>
+                    {% endif %}
+                {% endif %}
+             </div>
+         </article>
+     </div>
+    </div>
+</div>
+{% endblock %}

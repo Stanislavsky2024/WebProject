@@ -1,0 +1,79 @@
+.createGroup, .editGroup {
+    border: 0;
+    border-radius: 20px;
+    align-self: center;
+    justify-self: center;
+    height: max-content;
+    width: 480px;
+}
+
+.createGroup h1, .editGroup h1 {
+    margin-top: 2%;
+    margin-left: 5%;
+    color: rgb(51, 51, 51);
+}
+
+.createGroup p, .editGroup p {
+    margin-left: 5%;
+    font-size: large;
+    margin-top: 10px;
+    color: rgb(51, 51, 51);
+}
+
+.createGroup .inputTextCreate, .editGroup .inputTextEdit {
+    width: calc(90% - 2.5px);
+    margin-left: calc(5% - 2.5px);
+    height: 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(117, 117, 117);
+    padding-top: 2px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    font-size: large;
+}
+
+.createGroup div, .editGroup div{
+    display: flex;
+    gap: calc(45% + 2.5px);
+    margin-top: 7%;
+}
+
+.createGroup .submitDialogCreate, .editGroup .submitDialogEdit {
+    height: 35px;
+    width: 110px;
+    margin-left: calc(5% - 2.5px);
+    margin-bottom: 10px;
+    font-size: large;
+    background: #eaecec;
+    color: rgb(19, 19, 19);
+    appearance: none;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.25s, 0.25s;
+}
+
+.createGroup .closeDialogCreate, .editGroup .closeDialogEdit {
+    height: 35px;
+    width: 110px;
+    margin-right: calc(5% - 2.5px);
+    margin-bottom: 10px;
+    font-size: large;
+    background: #eaecec;
+    color: rgb(19, 19, 19);
+    appearance: none;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.25s, 0.25s;
+}
+
+.createGroup .submitDialogCreate:hover, .closeDialogCreate:hover {
+    background: #d7dada;
+    transition: 0.25s, 0.25s;
+}
+
+.editGroup .submitDialogEdit:hover, .closeDialogEdit:hover {
+    background: #d7dada;
+    transition: 0.25s, 0.25s;
+}

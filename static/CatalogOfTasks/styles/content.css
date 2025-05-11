@@ -1,0 +1,214 @@
+.content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 95px;
+    margin-left: calc(12.5% + 130px);
+    height: max-content;
+    width: 75%;
+}
+
+.articlesData {
+    display: none;
+}
+
+.helpsData {
+    display: none;
+}
+
+.solutionsData {
+    display: none;
+}
+
+.content-section .filter-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    width: 60%;
+    height: max-content;
+    padding-bottom: 15px;
+    padding-top: 5px;
+    background: rgb(247, 247, 247);
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.03)
+}
+
+.content-section .filter-section h1{
+    margin-left: 2%;
+    color: rgb(51, 51, 51);
+    width: 100%;
+}
+
+.content-section .filter-section .filter-holder {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+
+.content-section .filter-section .filter-holder p{
+    color: rgb(116, 116, 116);
+    margin-top: 20px;
+    font-size: larger;
+}
+
+.content-section .filter-section .filter-holder div {
+    width: 25%;
+}
+
+.content-section .filter-section .filter-holder div select {
+    color: rgb(51, 51, 51);
+    background-color: rgb(248, 248, 248);
+    border-radius: 10px;
+    width: 100%;
+    height: 35px;
+    margin-top: 10px;
+    border-color: rgb(215, 215, 215);
+    font-size: larger;
+}
+
+.content-section .tasks-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-self: center;
+    width: 75%;
+    height: max-content;
+}
+
+.content-section .tasks-section article {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.03)
+}
+
+.content-section .tasks-section article .info-section {
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.content-section .tasks-section article .info-section .header-section {
+    display: flex;
+}
+
+.content-section .tasks-section article .info-section .header-section h1 {
+    display: flex;
+    width: max-content;
+}
+
+.content-section .tasks-section article .info-section .header-section img {
+    width: 25px; 
+    padding: 0;
+    padding-top: 2.5px;
+    padding-left: 5px;
+}
+
+.content-section .tasks-section article .info-section .stats-section {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    width: 100%;
+    height: 64px;
+}
+
+.content-section .tasks-section article .info-section .stats-section div {
+    display: flex;
+    margin-bottom: 30px;
+    background-color: rgb(220, 220, 220);
+    height: 46%;
+    margin-right: 15px;
+    border-radius: 8px;
+    font-size: large;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-left: 10px;
+    width: max-content;
+    color: black;
+}
+
+.content-section .tasks-section article h1 {
+    display: flex;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    color: rgb(51, 51, 51);
+}
+
+.content-section .tasks-section article img {
+    display: flex;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    width: 95%;
+    height: fit-content;
+}
+
+.content-section .tasks-section article p {
+    display: flex;
+    font-size: large;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    color: rgb(51, 51, 51);
+}
+
+.content-section .tasks-section article .input-answer {
+    display: flex;
+
+}
+
+.content-section .tasks-section article button {
+    height: 35px;
+    width: 115px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    align-self: flex-end;
+    font-size: large;
+    background: #eaecec;
+    color: rgb(19, 19, 19);
+    appearance: none;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.3s, 0.3s;
+}
+
+.content-section .tasks-section article button:hover {
+    background: #d7dada;
+    transition: 0.3s, 0.3s;
+}
+
+.content-section .tasks-section article input {
+    width: calc(100% - 185px);
+    margin-left: 20px;
+    margin-top: 4px;
+    height: 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(117, 117, 117);
+    padding-top: 2px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    font-size: large;
+}
+
+.content-section .tasks-section article .help-section .help-h1 {
+    padding-bottom: 15px;
+}
+
+.content-section .tasks-section article .solution-section .solution-h1 {
+    padding-bottom: 15px
+}
+
+
+
+
+
+
+
+
+
+
+

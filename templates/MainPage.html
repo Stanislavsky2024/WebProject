@@ -1,0 +1,51 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/MainPage/styles/content.css">
+<link rel="stylesheet" href="/static/MainPage/styles/news.css">
+<div class="news-section">
+    <h1 class="section-header">Новости</h1>
+    <ul class="news-grid">
+        <li class="grid-1">
+            <img src="{{news.image}}" alt="">
+            <div class="text-news">
+                <h1>{{news.name}}</h1>
+                <p>{{news.content}}</p>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="content-grid">
+    <article>
+        <div class="image-layer1">  
+            <h1 class="img-h1-1">Каталог заданий</h1>
+        </div>
+        <p>Разберитесь и потренируйтесь решать задания экзамена, сортируя их с помощью фильтров</p>
+        <button>
+            <a href="/catalog" style="text-decoration: none; color: rgb(19, 19, 19); display: flex; align-content: center; height: 100%; justify-content: center; align-items: center;"><span>Открыть</span></a>
+        </button>
+    </article>
+    <article>
+        <div class="image-layer2">
+            <h1 class="img-h1-2">Готовые варианты</h1>
+        </div>
+        <p>Решайте готовые варианты экзамена или случайно генерируйте сами, чтобы проверить Ваши знания и оценить свой прогресс</p>
+        {% if current_user.is_authenticated %}
+            <button>
+                <a href="/variants/choose" style="text-decoration: none; color: rgb(19, 19, 19); display: flex; align-content: center; height: 100%; justify-content: center; align-items: center;"><span>Открыть</span></a>
+            </button>
+        {% else %}
+            <button style="cursor: default; pointer-events: none; background-color: rgb(187, 187, 187);">
+                Недоступно
+            </button>
+        {% endif %}
+    </article>
+</div>
+{% endblock %}
+
+
+
+
+
+
+

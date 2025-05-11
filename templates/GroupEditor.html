@@ -1,0 +1,131 @@
+{% extends "Base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/GroupEditor/static/content.css">
+<link rel="stylesheet" href="/static/GroupEditor/static/dialogs.css">
+<script type="module" src="/static/GroupEditor/scripts/main.js" defer></script>
+<div class="content-section" id="{{url_for(request.endpoint, **request.view_args)}}">
+    <div class="items-holder">
+        <h1 class="header">Редактор группы «{{name}}»</h1>
+        <div class="buttons-holder">
+            <input type="radio" name="button" id="announcement" checked>
+            <label for="announcement">Объявление</label>
+            <input type="radio" name="button" id="tasks">
+            <label for="tasks">Работы</label>
+        </div>
+        <div class="announcement-section">
+            <p>Заголовок объявления</p>
+            <input type="text" class="title" name="announcements" id="title" placeholder="Введите заголовок (не более 25 символов)" maxlength="25">
+            <p>Текст объявления</p>
+            <textarea class="text" name="announcements" id="text" cols="80" rows="5" maxlength="120" placeholder="Введите текст (не более 120 символов)"></textarea>
+            <p style="color: red; font-size: large;" id="announcement-error"></p>
+            <button class="finish" id="apply-announcement">Применить</button>
+        </div>
+        <div class="tasks-section" style="display: none;">
+            <p>Название работы</p>
+            <input class="work-name" type="text" name="work" id="work-name" placeholder="Введите заголовок (не более 20 символов)" maxlength="20">
+            <p>Задания добавляемой работы</p>
+            <table id="work">
+                <thead>
+                    <tr>
+                        <th>Номер</th>
+                        <th>Тип</th>
+                        <th>Действие</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <p>Добавить задание</p>
+            <input type="radio" name="tasks" id="option1" checked>
+            <label for="option1" class="options">Выбрать из существующих</label>
+            <input type="radio" name="tasks" id="option2">
+            <label for="option2" class="options">Создать свое</label>
+            <div class="choose">
+                <p>Фильтры заданий</p>
+                <div class="filter-holder">
+                    <select class="dropdown1" name="task-choosing" id="dropdown1">
+                        <option value="" disabled selected hidden>Номер...</option>
+                        {% for i in range(1, last_number + 1) %}
+                            <option value="">Задание {{i}}</option>
+                        {% endfor %}
+                    </select>
+                    <select class="dropdown2" name="difficulty-choosing" id="dropdown2">
+                        <option value="" disabled selected hidden>Сложность...</option>
+                        <option value="">Все сложности</option>
+                        <option value="">Простой</option>
+                        <option value="">Средний</option>
+                        <option value="">Сложный</option>
+                    </select>
+                    <select class="dropdown3" name="type-choosing" id="dropdown3">
+                        <option value="" disabled selected hidden>Тип...</option>
+                        <option value="">Все типы</option>
+                    </select>
+                </div>
+                <div class="tasks-choose">
+                    <table id="task">
+                        <thead>
+                            <tr>
+                                <th>Номер задания</th>
+                                <th>Уровень сложности</th>
+                                <th>Тип задания</th>
+                                <th>Действие</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <dialog id="task-statement-dialog">
+                    <div class="description-holder">
+                        <h1 id="header-text"></h1>
+                        <div class="info-holder">
+                            <p class="type" id="type-text"></p>
+                            <p class="difficulty" id="difficulty-text"></p>
+                        </div>
+                    </div>
+                    <p class="statement-text1" id="statement-text1"></p>
+                    <img src="" alt="" id="statement-img" style="display: none;">
+                    <p class="statement-text2" id="statement-text2" style="display: none;"></p>
+                    <p class="answer-text" id="answer-text"></p>
+                    <div class="button-holder">
+                        <button class="close">Закрыть</button>
+                    </div>
+                </dialog>
+            </div>
+            <div class="create" style="display: none;">
+                <p>Условие</p>
+                <textarea class="text" name="create-task" id="create-statement" cols="100" rows="12" maxlength="500" placeholder="Введите условие (не более 500 символов)"></textarea>
+                <p>Ответ</p>
+                <div style="display: flex;">
+                    <input type="text" name="create-task" id="create-answer" placeholder="Введите ответ (не более 25 символов)" maxlength="25">
+                    <button class="create" id="apply-custom-task">Добавить</button>
+                </div>
+                <p style="color: red; font-size: large;" id="create-error"></p>
+            </div>
+            <p style="color: red; font-size: large;" id="tasks-section-error"></p>
+            <button class="finish" id="apply-work">Применить</button>
+        </div>
+    </div>
+</div>
+<div style="margin-bottom: 70px;"></div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

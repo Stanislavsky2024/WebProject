@@ -1,0 +1,140 @@
+.content-section {
+    display: flex;
+    width: 70%;
+    margin-left: calc(15% + 130px);
+    flex-direction: column;
+    height: max-content;
+    margin-top: 115px;
+}
+
+.content-section .options-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.content-section .options-section button {
+    display: flex;
+    height: 45px;
+    width: 130px;
+    border-radius: 9px;
+    font-size: large;
+    border: 0;
+    appearance: none;
+    justify-content: center;
+    align-items: center;
+    color: rgb(19, 19, 19);
+    background: #e7e7e7;
+    cursor: pointer;
+    padding-bottom: 2px;
+    transition: 0.25s, 0.25s;
+}
+
+.content-section .options-section button:hover {
+    background: #d7dada;
+    transition: 0.25s, 0.25s;
+}
+
+.content-section .options-section .pressed {
+    background: #303030;
+    color: rgb(247, 247, 247);
+}
+
+.content-section .options-section .pressed:hover {
+    background: #303030;
+}
+
+.content-section .variants-section {
+    display: grid;
+    width: 100%;
+    height: max-content;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 30px;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 200px 200px 200px;
+    row-gap: 30px;
+}
+
+.content-section .variants-section article {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.03);
+}
+
+.content-section .variants-section article h1 {
+    color: rgb(19, 19, 19);
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 70%;
+}
+
+.content-section .variants-section article p {
+    color: rgb(68, 68, 68);
+    padding-left: 10px;
+    font-size: large;
+    padding-top: 10px;
+}
+
+.content-section .variants-section article .stats-section {
+    display: flex;
+}
+
+.content-section .variants-section article .stats-section .type {
+    display: flex;
+    justify-content: end;
+    width: 30%;
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+.content-section .variants-section article .stats-section .type div {
+    display: flex;
+    background-color: rgb(220, 220, 220);
+    height: 95%;
+    border-radius: 8px;
+    font-size: large;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-left: 10px;
+    width: max-content;
+    color: black;
+}
+
+.content-section .variants-section .button-class {
+    display: flex;
+    height: 100%;
+    justify-content: end;
+}
+
+.content-section .variants-section article button {
+    height: 35px;
+    width: 100px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    align-self: flex-end;
+    font-size: large;
+    background: #eaecec;
+    color: rgb(19, 19, 19);
+    appearance: none;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.25s, 0.25s;
+}
+
+.content-section .variants-section article button:hover {
+    background: #d7dada;
+    transition: 0.25s, 0.25s;
+}
+
+
+
+
+
+
+

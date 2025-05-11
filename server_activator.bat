@@ -1,0 +1,1 @@
+call .venv/Scripts/activate.bat & pip install -r requirements.txt --no-deps & python server.py

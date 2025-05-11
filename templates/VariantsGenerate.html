@@ -1,0 +1,18 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/VariantsGenerate/styles/content.css">
+<div class="content-section">
+    <div class="options-section">
+        <button><a href="/variants/choose" style="text-decoration: none; color: rgb(19, 19, 19);"><span>Готовые варианты</span></a></button>
+        <button class="pressed"><span>Сгенерировать вариант</span></button>
+    </div>
+    <div class="variant-section">
+        <div class="generator-section">
+            <h1>Генерация варианта</h1>
+            <p>В этой опции Вы можете сгенерировать полноценный вариант, состоящий из случайно выбранных 1-12 заданий, которые взяты из банка заданий сайта. После генерации варианта Вас переотправит на страницу выполнения варианта.</p>
+            <div class="button-class"><button><a href="/variants/solving/random" style="text-decoration: none; color: rgb(19, 19, 19); display: flex; align-content: center; height: 100%; justify-content: center; align-items: center;">Сгенерировать</a></button></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
