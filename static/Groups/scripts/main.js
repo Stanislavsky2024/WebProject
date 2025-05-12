@@ -42,7 +42,7 @@ try {
 
     for (let button of editGroupButtons) {
         button.addEventListener('click', (event) => {
-            groupEditId = event.target.parentNode.id
+            groupEditId = event.target.parentNode.id.split('-')[1]
             dialogEdit.showModal()
         })
     }

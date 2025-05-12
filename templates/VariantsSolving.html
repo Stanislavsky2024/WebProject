@@ -32,7 +32,7 @@
                 <p id="text2" style="display: none;">{{first['text2']}}</p>
             {% endif %}
             <div class="interface-section">
-                <input id="answer" type="text" name="answer" placeholder="Введите ответ" autocomplete="off">
+                <input id="answer" type="text" name="answer" placeholder="Введите ответ" autocomplete="off" onkeydown="this.value = this.value.replace(/;/, '')" onkeyup="this.value = this.value.replace(/;/, '')">
                 <button class="submit">Сохранить</button>
                 <p id="saved" class="saved" style="display: none; color: green;">Ответ сохранен!</p>
                 {% if var[-1] == 't' %}

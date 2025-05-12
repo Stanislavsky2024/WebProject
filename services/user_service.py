@@ -47,6 +47,7 @@ def avatar_loader():
 @error_handler
 def leave_group():
     group_id = request.get_data(as_text=True)
+    print(group_id)
     user = db_sess.get(User, current_user.id)
     group = db_sess.get(Group, group_id)
     user.remove_group_participant(group_id)

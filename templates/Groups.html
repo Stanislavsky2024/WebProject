@@ -17,9 +17,9 @@
                         </div>
                         <div class="button-holder">
                             <a class="open" href="/groups/{{group.id}}">Открыть</a>
-                            <button class="more" id="more" name="{{group.id}}">...</button>
+                            <button class="more" id="more1" name="{{group.id}}">...</button>
                         </div>
-                        <div class="extras1" id="{{group.id}}" style="display: none;">
+                        <div class="extras1" id="extras1-{{group.id}}" style="display: none;">
                             <button class="edit">Редактировать</button>
                             <button class="delete">Удалить</button>
                         </div>
@@ -36,8 +36,8 @@
                     {{ formCreate.description(class='inputTextCreate', placeholder="Введите описание") }}
                     <p style="color: red; display: none;" id="formCreateError"></p>
                     <div>
-                        <input type="button" class="submitDialogCreate", value="Создать">
-                        <input type="button" class="closeDialogCreate", value="Закрыть">
+                        <input type="button" class="submitDialogCreate" value="Создать">
+                        <input type="button" class="closeDialogCreate" value="Закрыть">
                         {{ formCreate.submit(type="submit", style='display: none', id="formCreateSubmit") }}
                     </div>
                 </form>
@@ -51,8 +51,8 @@
                     {{ formEdit.description(class='inputTextEdit', placeholder="Введите описание") }}
                     <p style="color: red; display: none;" id="formEditError"></p>
                     <div>
-                        <input type="button" class="submitDialogEdit", value="Подтвердить">
-                        <input type="button" class="closeDialogEdit", value="Закрыть">
+                        <input type="button" class="submitDialogEdit" value="Подтвердить">
+                        <input type="button" class="closeDialogEdit" value="Закрыть">
                         {{ formEdit.submit(type="submit", style='display: none', id="formEditSubmit") }}
                     </div>
                 </form>
@@ -71,9 +71,9 @@
                         </div>
                         <div class="button-holder">
                             <a class="open" href="/groups/{{group.id}}">Открыть</a>
-                            <button class="more" id="more" name="{{group.id}}">...</button>
+                            <button class="more" id="more2" name="{{group.id}}">...</button>
                         </div>
-                        <div class="extras2" id="{{group.id}}" style="display: none;">
+                        <div class="extras2" id="extras2-{{group.id}}" style="display: none;">
                             <button class="leave">Покинуть группу</button>
                         </div>
                     </article>

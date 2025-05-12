@@ -34,6 +34,9 @@ class User(SqlAlchemyBase, UserMixin, SerializerMixin):
     def add_group_participant(self, group_id):
         if str(group_id) in self.groups_participant.split(';'):
             return
+        for group in self.groups:
+            if int(group_id) == group.user_id:
+                return
         if self.groups_participant == '':
             self.groups_participant = str(group_id)
         else:
