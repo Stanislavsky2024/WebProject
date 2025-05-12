@@ -1,1 +1,0 @@
-cmd /k server_activator.bat
